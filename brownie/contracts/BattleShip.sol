@@ -29,8 +29,8 @@ contract starkShip {
         0xAB43bA48c9edF4C2C4bB01237348D1D7B28ef168;
     uint256 public turn;
     int public waitingShot;
-                          
-    bytes32 memory pgHash = 0x42ca59a92b355e482d343627aa76d02aa1569e6d63db020e5613aa7d509acab;
+                     
+    bytes32 pgHash = 0x042ca59a92b355e482d343627aa76d02aa1569e6d63db020e5613aa7d509acab;
 
     constructor(int shipHashLocation, int shifterHash) {
         Player memory playerA = Player(

@@ -1,4 +1,4 @@
-%builtins output pedersen 
+%builtins output pedersen range_check
 
 from starkware.cairo.common.serialize import serialize_word
 from starkware.cairo.common.hash import hash2
@@ -12,12 +12,11 @@ from starkware.cairo.common.math import (
 
 
 
-func main {output_ptr: felt*, pedersen_ptr: HashBuiltin*} ():
+func main {output_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr:felt} ():
     # user inputs a list of coordinates along with a sentence input (?)
     # each coordinate gets hashed along with the sentence input
     # output is a list of hash values
     alloc_locals 
-
     local shot_location:felt
     local shifter:felt
     %{ 

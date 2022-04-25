@@ -18,84 +18,113 @@ contract starkShip {
     uint256 locShip;
     uint256 programhash;
 
-    //Player struct
     struct Player {
         address addr;
-        uint256 shipPosition;
-        uint256 shifter;
-        bool turn;
+        uint256 shipHashLocation;
+        uint256 shifterHash;
     }
 
-    //State of the GAME
     enum State {
         Initial,
         Started,
-        Finished,
         Winner
     }
     State public state;
 
-    //Shots history:
-    mapping(address => uint8[]) positionShot1;
-    mapping(address => uint8[]) positionShot2;
+    mapping(address => bool[64]) shotsPlayer;
+    address public verifierContract =
+        0xAB43bA48c9edF4C2C4bB01237348D1D7B28ef168;
+    uint256 immutable revealProgramHash =
+        0x42ca59a92b355e482d343627aa76d02aa1569e6d63db020e5613aa7d509acab;
+    uint256 turn;
 
-    constructor(
-        uint256 shipHashLocation,
-        uint256 shifterHash,
-        uint256 programhash
-    ) {
+    constructor(uint256 shipHashLocation, uint256 shifterHash) {
         Player memory playerA = Player(
             msg.sender,
             shipHashLocation,
-            shifterHash,
-            false
+            shifterHash
         );
         players[0] = playerA;
-        programhash = programhash;
         state = State.Initial;
     }
 
-    address public verifierContract =
-        0xAB43bA48c9edF4C2C4bB01237348D1D7B28ef168;
-
     IFactRegistry public verifier = IFactRegistry(verifierContract);
 
-    function playerJoins(
-        address _addr,
-        uint256 shipHashLocation,
-        uint256 shifterHash,
-        bool _turn
-    ) public {
+    function playerJoins(uint256 shipHashLocation, uint256 shifterHash) public {
         require(state == State.Initial);
         Player memory playerB = Player(
             msg.sender,
             shipHashLocation,
-            shifterHash,
-            true
+            shifterHash
         );
         players[1] = playerB;
         state = State.Started;
+        turn = 1;
     }
 
-    function makeShot(address _player, uint8 position) external returns (bool) {
-        positionShot1[_player].push(position);
-        positionShot2[_player].push(position);
-        return true; // returns the position of the shot for a selected grid for a specific player
-    }
-
-    function getShot(address _player) external view returns (uint8[] memory) {
-        return positionShot1[_player];
-        return positionShot2[_player];
+    function makeShot(uint256[] memory programOutput) public {
+        require(programOutput[3] < 64);
+        require(state == State.Started);
+        require(players[turn].addr == msg.sender);
+        require(shotsPlayer[msg.sender][programOutput[3]] == false);
+        verifyCombatOutputPlayerAShot(programOutput);
+        shotsPlayer[msg.sender][programOutput[3]] = true;
+        if (programOutput[2] == 1) {
+            state = State.Winner;
+            return ();
+        }
+        if (turn == 1) {
+            turn = 0;
+        } else {
+            turn = 1;
+        }
+        return ();
     }
 
     //Get new grid based on the last shot mapping
-    //function updateGrid() public view returns (uint256[] memory){}
+    function updateGrid() public view returns (uint8) {}
 
     //position of the last attacked position
 
-    function getLastPositionAttacked(address _player, uint256 _counter)
+    // function getLastPositionAttacked(address _player, uint256 _counter){
+    //     public
+    //     view
+    //     returns (uint8)
+    // }
+
+    function verifyCombatOutputPlayerAShot(uint256[] memory programOutput)
         public
-        view
-        returns (uint8)
-    {}
+    {
+        bytes32 outputHash = keccak256(abi.encodePacked(programOutput));
+        bytes32 fact = keccak256(
+            abi.encodePacked(revealProgramHash, outputHash)
+        );
+        require(
+            IFactRegistry(verifierContract).isValid(fact),
+            "MISSING_CAIRO_PROOF"
+        );
+
+        // Ensure the output consistency with current system state.
+        if (turn == 1) {
+            require(programOutput.length == 4, "INVALID_PROGRAM_OUTPUT");
+            require(
+                players[0].shifterHash == programOutput[0],
+                "INVALID_PROGRAM_OUTPUT 0"
+            );
+            require(
+                players[0].shipHashLocation == programOutput[1],
+                "INVALID_PROGRAM_OUTPUT 1"
+            );
+        } else {
+            require(programOutput.length == 4, "INVALID_PROGRAM_OUTPUT");
+            require(
+                players[1].shifterHash == programOutput[0],
+                "INVALID_PROGRAM_OUTPUT 0"
+            );
+            require(
+                players[1].shipHashLocation == programOutput[1],
+                "INVALID_PROGRAM_OUTPUT 1"
+            );
+        }
+    }
 }

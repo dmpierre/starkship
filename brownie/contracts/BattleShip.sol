@@ -13,8 +13,8 @@ contract starkShip {
 
     struct Player {
         address addr;
-        int shipHashLocation;
-        int shifterHash;
+        int256 shipHashLocation;
+        int256 shifterHash;
     }
 
     enum State {
@@ -28,11 +28,12 @@ contract starkShip {
     address public verifierContract =
         0xAB43bA48c9edF4C2C4bB01237348D1D7B28ef168;
     uint256 public turn;
-    int public waitingShot;
-                     
-    bytes32 pgHash = 0x002ed20afb826d12df9ae4b9e54c0bf4acb5ddc8375b7254d0c60619111df54f;
+    int256 public waitingShot;
 
-    constructor(int shipHashLocation, int shifterHash) {
+    bytes32 pgHash =
+        0x002ed20afb826d12df9ae4b9e54c0bf4acb5ddc8375b7254d0c60619111df54f;
+
+    constructor(int256 shipHashLocation, int256 shifterHash) {
         Player memory playerA = Player(
             msg.sender,
             shipHashLocation,
@@ -44,7 +45,7 @@ contract starkShip {
 
     IFactRegistry public verifier = IFactRegistry(verifierContract);
 
-    function playerJoins(int shipHashLocation, int shifterHash) public {
+    function playerJoins(int256 shipHashLocation, int256 shifterHash) public {
         require(state == State.Initial);
         Player memory playerB = Player(
             msg.sender,
@@ -56,14 +57,21 @@ contract starkShip {
         turn = 1;
     }
 
-    function waitPlayer(int shot) public returns (int){
+    function waitPlayer(int256 shot) public returns (int256) {
         require(msg.sender == players[turn].addr);
         waitingShot = shot;
         return (waitingShot);
     }
 
-    function makeShot(int[] memory programOutput) public {
-        uint indexShot = uint (programOutput[3]);
+    function makeShot(int256[] memory programOutput) public {
+        uint256 indexShot = uint256(programOutput[3]);
+        require(waitingShot != 0);
+        if (programOutput[1] < 0) {
+            programOutput[1] += 2**251 + 17 * 2**192 + 1;
+        }
+        if (programOutput[0] < 0) {
+            programOutput[0] += 2**251 + 17 * 2**192 + 1;
+        }
         verifyCombatOutputPlayerAShot(programOutput);
         shotsPlayer[msg.sender][indexShot] = true;
         if (programOutput[2] == 1) {
@@ -89,23 +97,21 @@ contract starkShip {
     //     view
     //     returns (uint8)
     // }
-    function checkFact(int[] memory programOutput) public view returns (bytes32) {
+    function checkFact(int256[] memory programOutput)
+        public
+        view
+        returns (bytes32)
+    {
         bytes32 outputHash = keccak256(abi.encodePacked(programOutput));
-        bytes32 fact = keccak256(
-            abi.encodePacked(pgHash, outputHash)
-        );
-        return (
-            fact
-        );
+        bytes32 fact = keccak256(abi.encodePacked(pgHash, outputHash));
+        return (fact);
     }
 
-    function verifyCombatOutputPlayerAShot(int[] memory programOutput)
+    function verifyCombatOutputPlayerAShot(int256[] memory programOutput)
         public
     {
         bytes32 outputHash = keccak256(abi.encodePacked(programOutput));
-        bytes32 fact = keccak256(
-            abi.encodePacked(pgHash, outputHash)
-        );
+        bytes32 fact = keccak256(abi.encodePacked(pgHash, outputHash));
         require(
             IFactRegistry(verifierContract).isValid(fact),
             "MISSING_CAIRO_PROOF"

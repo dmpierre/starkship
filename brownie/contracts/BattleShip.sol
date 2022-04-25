@@ -24,7 +24,7 @@ contract starkShip {
     }
     State public state;
 
-    mapping(address => bool[64]) shotsPlayer;
+    mapping(address => bool[64]) public shotsPlayer;
     address public verifierContract =
         0xAB43bA48c9edF4C2C4bB01237348D1D7B28ef168;
     uint256 public turn;
@@ -65,13 +65,9 @@ contract starkShip {
 
     function makeShot(int256[] memory programOutput) public {
         uint256 indexShot = uint256(programOutput[3]);
+        programOutput = updateInput(programOutput);
         require(waitingShot != 0);
-        if (programOutput[1] < 0) {
-            programOutput[1] += 2**251 + 17 * 2**192 + 1;
-        }
-        if (programOutput[0] < 0) {
-            programOutput[0] += 2**251 + 17 * 2**192 + 1;
-        }
+
         verifyCombatOutputPlayerAShot(programOutput);
         shotsPlayer[msg.sender][indexShot] = true;
         if (programOutput[2] == 1) {
@@ -90,20 +86,30 @@ contract starkShip {
     //Get new grid based on the last shot mapping
     function updateGrid() public view returns (uint8) {}
 
-    //position of the last attacked position
+    function updateInput (int256[] memory programOutput) private returns (int256[] memory) {
+        if (programOutput[1] < 0) {
+            programOutput[1] += 2**251 + 17 * 2**192 + 1;
+        }
+        if (programOutput[0] < 0) {
+            programOutput[0] += 2**251 + 17 * 2**192 + 1;
+        }
+        return (
+            programOutput
+        );
+    }
+    
+    bytes32 public factBeingChecked;
+    bool public isProcessed = false;
 
-    // function getLastPositionAttacked(address _player, uint256 _counter){
-    //     public
-    //     view
-    //     returns (uint8)
-    // }
     function checkFact(int256[] memory programOutput)
         public
-        view
         returns (bytes32)
     {
+        programOutput = updateInput(programOutput);
         bytes32 outputHash = keccak256(abi.encodePacked(programOutput));
         bytes32 fact = keccak256(abi.encodePacked(pgHash, outputHash));
+        factBeingChecked = fact;
+        isProcessed = IFactRegistry(verifierContract).isValid(fact);
         return (fact);
     }
 
@@ -113,31 +119,10 @@ contract starkShip {
         bytes32 outputHash = keccak256(abi.encodePacked(programOutput));
         bytes32 fact = keccak256(abi.encodePacked(pgHash, outputHash));
         require(
-            IFactRegistry(verifierContract).isValid(fact),
+            IFactRegistry(verifierContract).isValid(fact) == true,
             "MISSING_CAIRO_PROOF"
         );
 
-        // Ensure the output consistency with current system state.
-        if (turn == 1) {
-            require(programOutput.length == 4, "INVALID_PROGRAM_OUTPUT");
-            require(
-                players[0].shifterHash == programOutput[0],
-                "INVALID_PROGRAM_OUTPUT 0"
-            );
-            require(
-                players[0].shipHashLocation == programOutput[1],
-                "INVALID_PROGRAM_OUTPUT 1"
-            );
-        } else {
-            require(programOutput.length == 4, "INVALID_PROGRAM_OUTPUT");
-            require(
-                players[1].shifterHash == programOutput[0],
-                "INVALID_PROGRAM_OUTPUT 0"
-            );
-            require(
-                players[1].shipHashLocation == programOutput[1],
-                "INVALID_PROGRAM_OUTPUT 1"
-            );
-        }
+
     }
 }

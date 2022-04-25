@@ -50,5 +50,6 @@ func main {output_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr:felt} 
     serialize_word(hash_shifter)
     serialize_word(hash_ship_location)
     serialize_word(is_ship)
+    serialize_word(shot_location)
     return()
 end

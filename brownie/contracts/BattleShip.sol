@@ -67,11 +67,9 @@ contract starkShip {
         return shotsPlayer[_player] ;
     }
 
-    //Get new grid based on the last shot mapping 
-    //function updateGrid() public view returns (uint256[] memory){}
+    // Get new grid based on the last shot mapping 
 
-    //position of the last attacked position 
-
+    // Position of the last attacked position 
     function getLastPositionAttacked(address _player, uint256 _counter) public view returns (uint8){}
         
 

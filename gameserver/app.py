@@ -19,6 +19,10 @@ SUBMIT_SHOT_PROOF_ARGS = [
     "./submit-reveal-sharp.sh"
 ]
 
+def write_json(obj, path):
+    with open(path, "w") as fout:
+        json.dump(obj, fout)
+
 
 MASKER_ARGS = [
     "cairo-run", 
@@ -54,12 +58,6 @@ def parse_stdout2(stdout):
     stdout_clean = stdout.replace("\n", "")
     return stdout_clean
 
-@app.route("/game", methods=["GET"])
-def game():
-    return {
-        
-    }
-
 @app.route("/masker_program_hash", methods=["GET"])
 def masker_program_hash():
     completed_process = subprocess.run(MASKER_PROGRAM_HASH, capture_output=True, text=True)
@@ -88,7 +86,7 @@ def mask():
         "ship_location": int(ship_loc),
         "shifter": int(shifter)
     }
-    _=write_json(mask_input, "logs/mask_input.json")
+    _ = write_json(mask_input, "logs/mask_input.json")
     completed_process = subprocess.run(MASKER_ARGS, capture_output=True, text=True)
     clean_stdout = parse_stdout(completed_process.stdout)
     return {
@@ -113,11 +111,6 @@ def reveal():
         "output": completed_process.stdout,
         "clean": clean_stdout
     }
-
-
-def write_json(obj, path):
-    with open(path, "w") as fout:
-        json.dump(obj, fout)
 
 @app.route("/submit-shot-proof", methods=["GET"])
 def submit_shot_proof():

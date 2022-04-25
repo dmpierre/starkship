@@ -13,19 +13,13 @@ PATH_CAIRO_SCRIPTS_FOLDER = f"{CUR_DIR}/../cairo-scripts/"
 PATH_MOVES_JSON_FOLDER = f"{CUR_DIR}/../moves/"
 
 # TODO: should this be encapsulated in something? along with ENV variables above
-MASKER_ARGS = [
+SUBMIT_SHOT_PROOF_ARGS = [
     "cairo-run", 
     f"--program=../move_compiled.json", 
     f"--program_input=../move.json", 
     "--layout=small", 
     "--print_output"
 ]
-
-@app.route("/game", methods=["GET"])
-def game():
-    return {
-
-    }
 
 @app.route("/mask", methods=["GET"])
 def mask():
@@ -37,6 +31,21 @@ def mask():
 def reveal():
     return {
         
+    }
+
+@app.route("/submit-shot-proof", methods=["GET"])
+def submit_shot_proof():
+    shot_position = request.args.get("shot-position")
+    return {
+
+    } 
+
+@app.route("/get-job-status", methods=["GET"])
+def get_job_status():
+    jobkey = request.args.get("job-key")
+
+    return {
+
     }
 
 if __name__ == "__main__":

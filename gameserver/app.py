@@ -13,10 +13,19 @@ PATH_CAIRO_SCRIPTS_FOLDER = f"{CUR_DIR}/../cairo-scripts/"
 PATH_MOVES_JSON_FOLDER = f"{CUR_DIR}/../moves/"
 MASKER_COMPILED = "masker_compiled.json"
 REVEALER_COMPILED = "revealer_compiled.json"
-
 # TODO: should this be encapsulated in something? along with ENV variables above
+
 SUBMIT_SHOT_PROOF_ARGS = [
     "./submit-reveal-sharp.sh"
+]
+
+
+MASKER_ARGS = [
+    "cairo-run", 
+    f"--program={PATH_CAIRO_SCRIPTS_FOLDER}{MASKER_COMPILED}", 
+    f"--program_input=./logs/mask_input.json", 
+    "--layout=small", 
+    "--print_output"
 ]
 
 MASKER_PROGRAM_HASH = [
@@ -28,6 +37,10 @@ REVEALER_PROGRAM_HASH = [
     "cairo-hash-program", 
     f"--program={PATH_CAIRO_SCRIPTS_FOLDER}/{REVEALER_COMPILED}"
 ]
+
+def parse_stdout(stdout):
+    stdout_clean = stdout.replace("Program output:\n ", "").replace("\n", "").split(" ")[1:]
+    return stdout_clean[::2]
 
 def parse_stdout2(stdout):
     stdout_clean = stdout.replace("\n", "")
@@ -61,8 +74,18 @@ def revealer_program_hash():
 
 @app.route("/mask", methods=["GET"])
 def mask():
+    ship_loc = request.args.get("ship_location")
+    shifter = request.args.get("shifter")
+    mask_input = {
+        "ship_location": int(ship_loc),
+        "shifter": int(shifter)
+    }
+    _=write_json(mask_input, "logs/mask_input.json")
+    completed_process = subprocess.run(MASKER_ARGS, capture_output=True, text=True)
+    clean_stdout = parse_stdout(completed_process.stdout)
     return {
-
+        "output": completed_process.stdout,
+        "clean": clean_stdout
     }
 
 @app.route("/reveal")

@@ -137,8 +137,11 @@
         "0x480a80037fff8000",
         "0x1104800180018000",
         "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffffb1",
-        "0x48127ff07fff8000",
-        "0x48127fd87fff8000",
+        "0x480a80007fff8000",
+        "0x1104800180018000",
+        "0x800000000000010ffffffffffffffffffffffffffffffffffffffffffffffae",
+        "0x48127fec7fff8000",
+        "0x48127fd47fff8000",
         "0x208b7fff7fff7ffe"
     ],
     "debug_info": {
@@ -164,7 +167,7 @@
                     "end_col": 31,
                     "end_line": 3,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/serialize.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/serialize.cairo"
                     },
                     "start_col": 5,
                     "start_line": 3
@@ -190,21 +193,21 @@
                     "end_col": 36,
                     "end_line": 4,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/serialize.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/serialize.cairo"
                     },
                     "parent_location": [
                         {
                             "end_col": 39,
                             "end_line": 2,
                             "input_file": {
-                                "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/serialize.cairo"
+                                "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/serialize.cairo"
                             },
                             "parent_location": [
                                 {
                                     "end_col": 14,
                                     "end_line": 5,
                                     "input_file": {
-                                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/serialize.cairo"
+                                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/serialize.cairo"
                                     },
                                     "start_col": 5,
                                     "start_line": 5
@@ -240,7 +243,7 @@
                     "end_col": 14,
                     "end_line": 5,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/serialize.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/serialize.cairo"
                     },
                     "start_col": 5,
                     "start_line": 5
@@ -267,7 +270,7 @@
                     "end_col": 19,
                     "end_line": 14,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/hash.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/hash.cairo"
                     },
                     "start_col": 5,
                     "start_line": 14
@@ -294,7 +297,7 @@
                     "end_col": 19,
                     "end_line": 15,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/hash.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/hash.cairo"
                     },
                     "start_col": 5,
                     "start_line": 15
@@ -322,21 +325,21 @@
                     "end_col": 47,
                     "end_line": 17,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/hash.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/hash.cairo"
                     },
                     "parent_location": [
                         {
                             "end_col": 35,
                             "end_line": 13,
                             "input_file": {
-                                "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/hash.cairo"
+                                "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/hash.cairo"
                             },
                             "parent_location": [
                                 {
                                     "end_col": 27,
                                     "end_line": 18,
                                     "input_file": {
-                                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/hash.cairo"
+                                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/hash.cairo"
                                     },
                                     "start_col": 5,
                                     "start_line": 18
@@ -374,14 +377,14 @@
                     "end_col": 33,
                     "end_line": 16,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/hash.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/hash.cairo"
                     },
                     "parent_location": [
                         {
                             "end_col": 26,
                             "end_line": 18,
                             "input_file": {
-                                "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/hash.cairo"
+                                "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/hash.cairo"
                             },
                             "start_col": 20,
                             "start_line": 18
@@ -414,7 +417,7 @@
                     "end_col": 27,
                     "end_line": 18,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/hash.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/hash.cairo"
                     },
                     "start_col": 5,
                     "start_line": 18
@@ -438,7 +441,7 @@
                             "end_col": 38,
                             "end_line": 3,
                             "input_file": {
-                                "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/alloc.cairo"
+                                "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/alloc.cairo"
                             },
                             "start_col": 5,
                             "start_line": 3
@@ -450,7 +453,7 @@
                     "end_col": 12,
                     "end_line": 4,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/alloc.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/alloc.cairo"
                     },
                     "start_col": 5,
                     "start_line": 4
@@ -473,7 +476,7 @@
                     "end_col": 39,
                     "end_line": 5,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/alloc.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/alloc.cairo"
                     },
                     "start_col": 5,
                     "start_line": 5
@@ -499,7 +502,7 @@
                             "end_col": 7,
                             "end_line": 9,
                             "input_file": {
-                                "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                                "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                             },
                             "start_col": 5,
                             "start_line": 5
@@ -511,7 +514,7 @@
                     "end_col": 7,
                     "end_line": 10,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                     },
                     "start_col": 5,
                     "start_line": 10
@@ -536,7 +539,7 @@
                     "end_col": 18,
                     "end_line": 12,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                     },
                     "start_col": 9,
                     "start_line": 12
@@ -561,7 +564,7 @@
                     "end_col": 14,
                     "end_line": 15,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                     },
                     "start_col": 5,
                     "start_line": 15
@@ -588,7 +591,7 @@
                             "end_col": 7,
                             "end_line": 44,
                             "input_file": {
-                                "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                                "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                             },
                             "start_col": 5,
                             "start_line": 40
@@ -600,7 +603,7 @@
                     "end_col": 26,
                     "end_line": 45,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                     },
                     "start_col": 5,
                     "start_line": 45
@@ -626,21 +629,21 @@
                     "end_col": 46,
                     "end_line": 46,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                     },
                     "parent_location": [
                         {
                             "end_col": 31,
                             "end_line": 39,
                             "input_file": {
-                                "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                                "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                             },
                             "parent_location": [
                                 {
                                     "end_col": 14,
                                     "end_line": 47,
                                     "input_file": {
-                                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                                     },
                                     "start_col": 5,
                                     "start_line": 47
@@ -676,7 +679,7 @@
                     "end_col": 14,
                     "end_line": 47,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                     },
                     "start_col": 5,
                     "start_line": 47
@@ -703,21 +706,21 @@
                     "end_col": 31,
                     "end_line": 51,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                     },
                     "parent_location": [
                         {
                             "end_col": 31,
                             "end_line": 39,
                             "input_file": {
-                                "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                                "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                             },
                             "parent_location": [
                                 {
                                     "end_col": 21,
                                     "end_line": 52,
                                     "input_file": {
-                                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                                     },
                                     "start_col": 5,
                                     "start_line": 52
@@ -754,7 +757,7 @@
                     "end_col": 20,
                     "end_line": 52,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                     },
                     "start_col": 15,
                     "start_line": 52
@@ -781,7 +784,7 @@
                     "end_col": 21,
                     "end_line": 52,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                     },
                     "start_col": 5,
                     "start_line": 52
@@ -808,7 +811,7 @@
                     "end_col": 14,
                     "end_line": 53,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                     },
                     "start_col": 5,
                     "start_line": 53
@@ -835,21 +838,21 @@
                     "end_col": 34,
                     "end_line": 68,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                     },
                     "parent_location": [
                         {
                             "end_col": 31,
                             "end_line": 39,
                             "input_file": {
-                                "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                                "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                             },
                             "parent_location": [
                                 {
                                     "end_col": 17,
                                     "end_line": 69,
                                     "input_file": {
-                                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                                     },
                                     "start_col": 5,
                                     "start_line": 69
@@ -886,14 +889,14 @@
                     "end_col": 37,
                     "end_line": 68,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                     },
                     "parent_location": [
                         {
                             "end_col": 16,
                             "end_line": 69,
                             "input_file": {
-                                "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                                "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                             },
                             "start_col": 15,
                             "start_line": 69
@@ -925,7 +928,7 @@
                     "end_col": 17,
                     "end_line": 69,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                     },
                     "start_col": 5,
                     "start_line": 69
@@ -952,14 +955,14 @@
                     "end_col": 37,
                     "end_line": 68,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                     },
                     "parent_location": [
                         {
                             "end_col": 16,
                             "end_line": 70,
                             "input_file": {
-                                "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                                "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                             },
                             "start_col": 15,
                             "start_line": 70
@@ -991,14 +994,14 @@
                     "end_col": 40,
                     "end_line": 68,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                     },
                     "parent_location": [
                         {
                             "end_col": 19,
                             "end_line": 70,
                             "input_file": {
-                                "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                                "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                             },
                             "start_col": 18,
                             "start_line": 70
@@ -1030,7 +1033,7 @@
                     "end_col": 20,
                     "end_line": 70,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                     },
                     "start_col": 5,
                     "start_line": 70
@@ -1057,7 +1060,7 @@
                     "end_col": 14,
                     "end_line": 71,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                     },
                     "start_col": 5,
                     "start_line": 71
@@ -1134,7 +1137,7 @@
                             "end_col": 34,
                             "end_line": 68,
                             "input_file": {
-                                "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                                "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                             },
                             "parent_location": [
                                 {
@@ -2009,7 +2012,7 @@
                             "end_col": 39,
                             "end_line": 2,
                             "input_file": {
-                                "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/serialize.cairo"
+                                "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/serialize.cairo"
                             },
                             "parent_location": [
                                 {
@@ -2304,37 +2307,25 @@
                 },
                 "hints": [],
                 "inst": {
-                    "end_col": 63,
-                    "end_line": 40,
+                    "end_col": 24,
+                    "end_line": 20,
                     "input_file": {
                         "filename": "revealer.cairo"
                     },
                     "parent_location": [
                         {
-                            "end_col": 57,
-                            "end_line": 15,
+                            "end_col": 33,
+                            "end_line": 53,
                             "input_file": {
                                 "filename": "revealer.cairo"
                             },
-                            "parent_location": [
-                                {
-                                    "end_col": 13,
-                                    "end_line": 53,
-                                    "input_file": {
-                                        "filename": "revealer.cairo"
-                                    },
-                                    "start_col": 5,
-                                    "start_line": 53
-                                },
-                                "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
-                            ],
-                            "start_col": 31,
-                            "start_line": 15
+                            "start_col": 20,
+                            "start_line": 53
                         },
-                        "While expanding the reference 'pedersen_ptr' in:"
+                        "While expanding the reference 'shot_location' in:"
                     ],
-                    "start_col": 51,
-                    "start_line": 40
+                    "start_col": 11,
+                    "start_line": 20
                 }
             },
             "83": {
@@ -2364,9 +2355,103 @@
                 "hints": [],
                 "inst": {
                     "end_col": 34,
+                    "end_line": 53,
+                    "input_file": {
+                        "filename": "revealer.cairo"
+                    },
+                    "start_col": 5,
+                    "start_line": 53
+                }
+            },
+            "85": {
+                "accessible_scopes": [
+                    "__main__",
+                    "__main__.main"
+                ],
+                "flow_tracking_data": {
+                    "ap_tracking": {
+                        "group": 7,
+                        "offset": 65
+                    },
+                    "reference_ids": {
+                        "__main__.main.__temp0": 35,
+                        "__main__.main.hash_shifter": 29,
+                        "__main__.main.hash_ship_location": 33,
+                        "__main__.main.hash_shot_location": 31,
+                        "__main__.main.is_ship": 34,
+                        "__main__.main.output_ptr": 39,
+                        "__main__.main.pedersen_ptr": 32,
+                        "__main__.main.range_check_ptr": 27,
+                        "__main__.main.shifter": 26,
+                        "__main__.main.ship_location": 25,
+                        "__main__.main.shot_location": 24
+                    }
+                },
+                "hints": [],
+                "inst": {
+                    "end_col": 63,
+                    "end_line": 40,
+                    "input_file": {
+                        "filename": "revealer.cairo"
+                    },
+                    "parent_location": [
+                        {
+                            "end_col": 57,
+                            "end_line": 15,
+                            "input_file": {
+                                "filename": "revealer.cairo"
+                            },
+                            "parent_location": [
+                                {
+                                    "end_col": 13,
+                                    "end_line": 54,
+                                    "input_file": {
+                                        "filename": "revealer.cairo"
+                                    },
+                                    "start_col": 5,
+                                    "start_line": 54
+                                },
+                                "While trying to retrieve the implicit argument 'pedersen_ptr' in:"
+                            ],
+                            "start_col": 31,
+                            "start_line": 15
+                        },
+                        "While expanding the reference 'pedersen_ptr' in:"
+                    ],
+                    "start_col": 51,
+                    "start_line": 40
+                }
+            },
+            "86": {
+                "accessible_scopes": [
+                    "__main__",
+                    "__main__.main"
+                ],
+                "flow_tracking_data": {
+                    "ap_tracking": {
+                        "group": 7,
+                        "offset": 66
+                    },
+                    "reference_ids": {
+                        "__main__.main.__temp0": 35,
+                        "__main__.main.hash_shifter": 29,
+                        "__main__.main.hash_ship_location": 33,
+                        "__main__.main.hash_shot_location": 31,
+                        "__main__.main.is_ship": 34,
+                        "__main__.main.output_ptr": 39,
+                        "__main__.main.pedersen_ptr": 32,
+                        "__main__.main.range_check_ptr": 27,
+                        "__main__.main.shifter": 26,
+                        "__main__.main.ship_location": 25,
+                        "__main__.main.shot_location": 24
+                    }
+                },
+                "hints": [],
+                "inst": {
+                    "end_col": 34,
                     "end_line": 68,
                     "input_file": {
-                        "filename": "/home/sacha/myproject/env/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
+                        "filename": "/Users/dmpierre/miniconda3/envs/starknet-hackaton/lib/python3.7/site-packages/starkware/cairo/common/math.cairo"
                     },
                     "parent_location": [
                         {
@@ -2385,12 +2470,12 @@
                                     "parent_location": [
                                         {
                                             "end_col": 13,
-                                            "end_line": 53,
+                                            "end_line": 54,
                                             "input_file": {
                                                 "filename": "revealer.cairo"
                                             },
                                             "start_col": 5,
-                                            "start_line": 53
+                                            "start_line": 54
                                         },
                                         "While trying to retrieve the implicit argument 'range_check_ptr' in:"
                                     ],
@@ -2408,7 +2493,7 @@
                     "start_line": 68
                 }
             },
-            "84": {
+            "87": {
                 "accessible_scopes": [
                     "__main__",
                     "__main__.main"
@@ -2416,7 +2501,7 @@
                 "flow_tracking_data": {
                     "ap_tracking": {
                         "group": 7,
-                        "offset": 63
+                        "offset": 67
                     },
                     "reference_ids": {
                         "__main__.main.__temp0": 35,
@@ -2424,7 +2509,7 @@
                         "__main__.main.hash_ship_location": 33,
                         "__main__.main.hash_shot_location": 31,
                         "__main__.main.is_ship": 34,
-                        "__main__.main.output_ptr": 38,
+                        "__main__.main.output_ptr": 39,
                         "__main__.main.pedersen_ptr": 32,
                         "__main__.main.range_check_ptr": 27,
                         "__main__.main.shifter": 26,
@@ -2435,12 +2520,12 @@
                 "hints": [],
                 "inst": {
                     "end_col": 13,
-                    "end_line": 53,
+                    "end_line": 54,
                     "input_file": {
                         "filename": "revealer.cairo"
                     },
                     "start_col": 5,
-                    "start_line": 53
+                    "start_line": 54
                 }
             }
         }
@@ -2697,6 +2782,14 @@
                         "offset": 61
                     },
                     "pc": 82,
+                    "value": "[cast(ap + (-1), felt**)]"
+                },
+                {
+                    "ap_tracking_data": {
+                        "group": 7,
+                        "offset": 65
+                    },
+                    "pc": 85,
                     "value": "[cast(ap + (-1), felt**)]"
                 }
             ],
@@ -3774,6 +3867,14 @@
                     "offset": 61
                 },
                 "pc": 82,
+                "value": "[cast(ap + (-1), felt**)]"
+            },
+            {
+                "ap_tracking_data": {
+                    "group": 7,
+                    "offset": 65
+                },
+                "pc": 85,
                 "value": "[cast(ap + (-1), felt**)]"
             }
         ]

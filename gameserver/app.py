@@ -70,7 +70,7 @@ def revealer_program_hash():
         "ouput": completed_process.stdout,
         "stderr": completed_process.stderr,
         "clean_stdout": clean_stdout
-    }
+    }   
 
 @app.route("/mask", methods=["GET"])
 def mask():
@@ -101,9 +101,9 @@ def write_json(obj, path):
 
 @app.route("/submit-shot-proof", methods=["GET"])
 def submit_shot_proof():
-    shot_location = int(request.args.get("shot-position"))
-    ship_location = int(request.args.get("boat-position"))
-    shifter_value = int(request.args.get("shifter-value"))
+    shot_location = int(request.args.get("shot-location"))
+    ship_location = int(request.args.get("ship-location"))
+    shifter_value = int(request.args.get("shifter"))
     shot_data = {
             "shot_location": shot_location,
             "ship_location": ship_location,

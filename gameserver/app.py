@@ -82,7 +82,7 @@ def revealer_program_hash():
 
 @app.route("/mask", methods=["GET"])
 def mask():
-    ship_loc = request.args.get("ship_location")
+    ship_loc = request.args.get("ship-location")
     shifter = request.args.get("shifter")
     mask_input = {
         "ship_location": int(ship_loc),
@@ -98,15 +98,15 @@ def mask():
 
 @app.route("/reveal", methods=["GET"])
 def reveal():
-    ship_loc = request.args.get("ship_location")
-    shot_loc = request.args.get("shot_location")
+    ship_loc = request.args.get("ship-location")
+    shot_loc = request.args.get("shot-location")
     shifter = request.args.get("shifter")
     mask_input = {
         "ship_location": int(ship_loc),
         "shot_location": int(shot_loc),
         "shifter": int(shifter)
     }
-    _=write_json(mask_input, "logs/reveal_input.json")
+    _ = write_json(mask_input, "logs/reveal_input.json")
     completed_process = subprocess.run(REVEALER_ARGS, capture_output=True, text=True)
     clean_stdout = parse_stdout(completed_process.stdout)
     return {

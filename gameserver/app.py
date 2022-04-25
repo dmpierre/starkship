@@ -28,6 +28,14 @@ MASKER_ARGS = [
     "--print_output"
 ]
 
+REVEALER_ARGS = [
+    "cairo-run", 
+    f"--program={PATH_CAIRO_SCRIPTS_FOLDER}{REVEALER_COMPILED}", 
+    f"--program_input=./logs/reveal_input.json", 
+    "--layout=small", 
+    "--print_output"
+]
+
 MASKER_PROGRAM_HASH = [
     "cairo-hash-program", 
     f"--program={PATH_CAIRO_SCRIPTS_FOLDER}/{MASKER_COMPILED}"
@@ -74,7 +82,7 @@ def revealer_program_hash():
 
 @app.route("/mask", methods=["GET"])
 def mask():
-    ship_loc = request.args.get("ship_location")
+    ship_loc = request.args.get("ship-location")
     shifter = request.args.get("shifter")
     mask_input = {
         "ship_location": int(ship_loc),
@@ -88,10 +96,22 @@ def mask():
         "clean": clean_stdout
     }
 
-@app.route("/reveal")
+@app.route("/reveal", methods=["GET"])
 def reveal():
+    ship_loc = request.args.get("ship-location")
+    shot_loc = request.args.get("shot-location")
+    shifter = request.args.get("shifter")
+    mask_input = {
+        "ship_location": int(ship_loc),
+        "shot_location": int(shot_loc),
+        "shifter": int(shifter)
+    }
+    _ = write_json(mask_input, "logs/reveal_input.json")
+    completed_process = subprocess.run(REVEALER_ARGS, capture_output=True, text=True)
+    clean_stdout = parse_stdout(completed_process.stdout)
     return {
-        
+        "output": completed_process.stdout,
+        "clean": clean_stdout
     }
 
 

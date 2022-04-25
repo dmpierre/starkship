@@ -1,6 +1,15 @@
 //SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.7;
 
+interface IFactRegistry {
+    /*
+      Returns true if the given fact was previously registered in the contract.
+    */
+    function isValid(bytes32 fact)
+        external view
+        returns(bool);
+}
+
 contract starkShip {
 
     Player[2] players;
@@ -38,6 +47,10 @@ contract starkShip {
         state = State.Initial;
 
     }
+    
+    address public verifierContract = 0xAB43bA48c9edF4C2C4bB01237348D1D7B28ef168;
+    
+    IFactRegistry public verifier = IFactRegistry(verifierContract);
 
     function playerJoins (address _addr, uint256 shipHashLocation, uint256 shifterHash, bool _turn) public {
         require(state == State.Initial);

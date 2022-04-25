@@ -13,10 +13,10 @@ PATH_CAIRO_SCRIPTS_FOLDER = f"{CUR_DIR}/../cairo-scripts/"
 PATH_MOVES_JSON_FOLDER = f"{CUR_DIR}/../moves/"
 
 # TODO: should this be encapsulated in something? along with ENV variables above
-ARGS = [
+MASKER_ARGS = [
     "cairo-run", 
-    f"--program={PATH_CAIRO_SCRIPTS_FOLDER}/move_compiled.json", 
-    f"--program_input={PATH_MOVES_JSON_FOLDER}/move.json", 
+    f"--program=../move_compiled.json", 
+    f"--program_input=../move.json", 
     "--layout=small", 
     "--print_output"
 ]

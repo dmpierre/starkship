@@ -57,45 +57,7 @@ contract starkShip {
         );
         players[1] = playerB;
         state = State.Started;
-<<<<<<< HEAD
-    }
-=======
     } 
-}
-//     mapping (address => int8[]) shotsPlayer ; 
-//     mapping (uint =>  mapping(address => uint8[])) positionShot; // Holds the position of the shot in the grid for a player for a current turn. 
-//     //mapping (uint => mapping(address => uint8)) lastPositionShot; //Holds the index of the last fired position.
-//     //mapping (uint => mapping(address => ShipPosition[])) correctPositionsHit;   //Position of the correct position -> winner 
-//     //mapping ()
-//     //mapping (address => int8[]) shotsPlayer2 ;
-
-
-
-//     uint[] shots = [1,2];
-
-//     function makeShot(address _player, uint8 _shot) public view returns(uint8[] memory){
-//         require(state == State.Started);
-
-//         //_shot.push([shotsPlayer2[_player]); 
-//         shots.push(_shot);
-//         counter += 1 ;
-
-//         return shots ;
-//     }
-
-    
-
-//     //Get new grid based on the last shot mapping 
-//     function updateGrid() public view returns (uint8){}
-
-//     //position of the last attacked position 
-
-//     function getLastPositionAttacked(address _player, uint256 _counter) public view returns (uint8){}
-        
-
-// }
-
->>>>>>> ca01a3704a6f9ea404167e39274841345b37ae73
 
     mapping(address => uint256[]) shotsPlayer; //Holds the shots of a specific player ;
     mapping(uint256 => mapping(address => uint8[])) positionShot; // Holds the position of the shot in the grid for a player for a current turn.
@@ -117,9 +79,10 @@ contract starkShip {
 
     //position of the last attacked position
 
-    function getLastPositionAttacked(address _player, uint256 _counter)
+    function getLastPositionAttacked(address _player, uint256 _counter){
         public
         view
         returns (uint8)
-    {}
+    }
+    
 }

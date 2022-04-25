@@ -38,6 +38,7 @@ contract starkShip {
         players[1] = playerB;
         state = State.Started;
     } 
+}
 //     mapping (address => int8[]) shotsPlayer ; 
 //     mapping (uint =>  mapping(address => uint8[])) positionShot; // Holds the position of the shot in the grid for a player for a current turn. 
 //     //mapping (uint => mapping(address => uint8)) lastPositionShot; //Holds the index of the last fired position.

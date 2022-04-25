@@ -2,4 +2,4 @@ networks:
   default: goerli-fork
   development:
     gas_price: auto
-dotenv: .env
+# dotenv: .env

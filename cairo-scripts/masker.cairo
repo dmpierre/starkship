@@ -34,12 +34,9 @@ func main {output_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr: felt}
     
     let hash_shifter: felt = hash2 {hash_ptr=pedersen_ptr} (shifter, 0)
     let hash_ship_location: felt= hash2 {hash_ptr=pedersen_ptr} (ship_location, shifter)
-    
-    let abs_hash_shifter: felt = hash_shifter * (-1)
-    let abs_hash_ship_location: felt = hash_ship_location * (-1)
 
-    serialize_word(abs_hash_shifter)
-    serialize_word(abs_hash_ship_location)
+    serialize_word(hash_shifter)
+    serialize_word(hash_ship_location)
     
     return()
 end

@@ -47,10 +47,6 @@ func main {output_ptr: felt*, pedersen_ptr: HashBuiltin*, range_check_ptr:felt} 
     else:
         is_ship = 0
     end
-    let sign_hash: felt = sign(hash_shifter)
-    if  sign_hash == -1:    
-        hash_shifter = hash_shifter * (-1)
-    end
 
     serialize_word(hash_shifter)
     serialize_word(hash_ship_location)

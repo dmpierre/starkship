@@ -30,7 +30,7 @@ contract starkShip {
     uint256 public turn;
     int public waitingShot;
                      
-    bytes32 pgHash = 0x042ca59a92b355e482d343627aa76d02aa1569e6d63db020e5613aa7d509acab;
+    bytes32 pgHash = 0x002ed20afb826d12df9ae4b9e54c0bf4acb5ddc8375b7254d0c60619111df54f;
 
     constructor(int shipHashLocation, int shifterHash) {
         Player memory playerA = Player(
@@ -63,12 +63,7 @@ contract starkShip {
     }
 
     function makeShot(int[] memory programOutput) public {
-        // require(waitingShot != 0);
-        // require(programOutput[3] < 64);
-        // require(state == State.Started);
-        // require(players[turn].addr == msg.sender);
         uint indexShot = uint (programOutput[3]);
-        // require(shotsPlayer[msg.sender][indexShot] == false);
         verifyCombatOutputPlayerAShot(programOutput);
         shotsPlayer[msg.sender][indexShot] = true;
         if (programOutput[2] == 1) {

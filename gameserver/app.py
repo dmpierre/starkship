@@ -14,11 +14,7 @@ PATH_MOVES_JSON_FOLDER = f"{CUR_DIR}/../moves/"
 
 # TODO: should this be encapsulated in something? along with ENV variables above
 SUBMIT_SHOT_PROOF_ARGS = [
-    "cairo-run", 
-    f"--program=../move_compiled.json", 
-    f"--program_input=../move.json", 
-    "--layout=small", 
-    "--print_output"
+    "./submit-reveal-sharp.sh"
 ]
 
 @app.route("/mask", methods=["GET"])
@@ -40,13 +36,23 @@ def write_json(obj, path):
 
 @app.route("/submit-shot-proof", methods=["GET"])
 def submit_shot_proof():
-    shot_position = request.args.get("shot-position")
-    boat_position = request.args.get("boat-position")
-    shifter_value = request.args.get("shifter-value")
+    shot_location = int(request.args.get("shot-position"))
+    ship_location = int(request.args.get("boat-position"))
+    shifter_value = int(request.args.get("shifter-value"))
+    shot_data = {
+            "shot_location": shot_location,
+            "ship_location": ship_location,
+            "shifter": shifter_value
+        }
+    write_json(shot_data, "logs/shot_input.json")
+    completed_process = subprocess.run(SUBMIT_SHOT_PROOF_ARGS, capture_output=True, text=True)
+    return_data = {
+        **shot_data,
+        "stdout": completed_process.stdout,
+        "stderr": completed_process.stderr
+    }
+    return return_data
 
-    return {
-
-    } 
 
 @app.route("/get-job-status", methods=["GET"])
 def get_job_status():

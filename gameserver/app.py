@@ -33,9 +33,17 @@ def reveal():
         
     }
 
+
+def write_json(obj, path):
+    with open(path, "w") as fout:
+        json.dump(obj, fout)
+
 @app.route("/submit-shot-proof", methods=["GET"])
 def submit_shot_proof():
     shot_position = request.args.get("shot-position")
+    boat_position = request.args.get("boat-position")
+    shifter_value = request.args.get("shifter-value")
+
     return {
 
     } 

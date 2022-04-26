@@ -63,6 +63,8 @@ contract starkShip {
         return (waitingShot);
     }
 
+    uint public winner;
+
     function makeShot(int256[] memory programOutput) public {
         uint256 indexShot = uint256(programOutput[3]);
         programOutput = updateInput(programOutput);
@@ -71,7 +73,7 @@ contract starkShip {
         verifyCombatOutputPlayerAShot(programOutput);
         shotsPlayer[msg.sender][indexShot] = true;
         if (programOutput[2] == 1) {
-            state = State.Winner;
+            winner = 2;
             return ();
         }
         if (turn == 1) {
